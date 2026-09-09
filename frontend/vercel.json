@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://smart-service-management-portal.onrender.com/api/:path*"
+    }
+  ]
+}
