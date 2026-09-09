@@ -1,0 +1,3 @@
+package com.smartservice.controller;
+import org.springframework.http.*;import org.springframework.web.bind.annotation.*;import java.util.*;
+@RestControllerAdvice public class GlobalExceptionHandler { @ExceptionHandler(AuthController.ApiException.class) public ResponseEntity<Map<String,String>> auth(AuthController.ApiException e){return ResponseEntity.status(e.getStatus()).body(Map.of("message",e.getMessage()));} @ExceptionHandler(Exception.class) public ResponseEntity<Map<String,String>> other(Exception e){return ResponseEntity.status(500).body(Map.of("message",e.getMessage()==null?"Server error":e.getMessage()));}}
